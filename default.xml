@@ -2,10 +2,10 @@
 <manifest>
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-coral-4.14-android10-c2f2"
+  <default revision="android-msm-coral-4.14-android10-qpr1"
     remote="aosp" sync-j="4" />
 
-  <project path="build" name="kernel/build" revision="master" />
+  <project path="build" name="kernel/build" revision="0e0b199ba8bed3a3847fa95c251394b2444e7b46" />
   <project path="private/msm-google" name="kernel/msm" >
     <linkfile src="build.config.no-cfi" dest="build.config" />
   </project>
