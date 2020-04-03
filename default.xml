@@ -2,7 +2,7 @@
 <manifest>
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-coral-4.14-android10-qpr1"
+  <default revision="android-msm-coral-4.14-android10"
     remote="aosp" sync-j="4" />
 
   <project path="build" name="kernel/build" revision="0e0b199ba8bed3a3847fa95c251394b2444e7b46" />
