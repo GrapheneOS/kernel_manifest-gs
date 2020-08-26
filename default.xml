@@ -2,10 +2,10 @@
 <manifest>
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-coral-4.14-android10-qpr3"
+  <default revision="android-msm-sunfish-4.14-android10-d4"
     remote="aosp" sync-j="4" />
 
-  <project path="build" name="kernel/build" revision="0e0b199ba8bed3a3847fa95c251394b2444e7b46" />
+  <project path="build" name="kernel/build" revision="2cdbe51739d2b31e4c5d480590197cc10359f3f6" />
   <project path="private/msm-google" name="kernel/msm" >
     <linkfile src="build.config.no-cfi" dest="build.config" />
   </project>
@@ -17,6 +17,6 @@
   <project path="private/msm-google-modules/touch/fts" name="kernel/msm-modules/fts_touch" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" revision="pie-release" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" revision="pie-release" clone-depth="1" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="4b1f275e6b3826c86f791ae8c4d5ec3563c2fc11" clone-depth="1" groups="partner" />
+  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="debf6e0c185a02a1cb43bc599c52d2b91445fb1b" clone-depth="1" groups="partner" />
   <project path="prebuilts-master/misc" name="platform/prebuilts/misc" revision="pie-release" clone-depth="1" />
 </manifest>
