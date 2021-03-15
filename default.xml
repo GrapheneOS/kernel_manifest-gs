@@ -3,10 +3,10 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-redfin-4.19-android11-d1"
+  <default revision="android-msm-redbull-4.19-android11-qpr2"
     remote="aosp" sync-j="4" />
 
-  <project path="build" name="kernel/build" revision="1ce72bdb374f68b032a55757b6a1981348adcbd9" groups="partner"/>
+  <project path="build" name="kernel/build" revision="2fea4c26047a76447c88ec4625d2c7e247a6b9fe" groups="partner"/>
   <project path="private/msm-google" name="kernel/msm" groups="partner" >
     <linkfile src="build.config.redbull.no-cfi" dest="build.config" />
     <linkfile src="build_redbull-gki.sh" dest="build_redbull-gki.sh" />
@@ -34,6 +34,6 @@
   <project path="prebuilts-master/misc" name="platform/prebuilts/misc" revision="pie-release" clone-depth="1" groups="partner" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" revision="5cc6456425d98d8fce685dcb13d3ad8baffccccf" groups="partner" />
   <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" revision="master" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="d020de865fb0d220e9928ccb46c500888634b9ea" groups="partner" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" revision="05711ec41f24d15e13c3cb85f1e12735e3421e08" groups="partner" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="30e9620566d78af29dbc22a9ef48a2bc56d42773" groups="partner" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" revision="96755e2ffffe500011eecd81b63eeaf2d484338e" groups="partner" />
 </manifest>
