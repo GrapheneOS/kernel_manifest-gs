@@ -3,7 +3,7 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-redbull-4.19-android11-qpr3"
+  <default revision="android-msm-barbet-4.19-android11-d2"
     remote="aosp" sync-j="4" />
 
   <project path="build" name="kernel/build" revision="2fea4c26047a76447c88ec4625d2c7e247a6b9fe" groups="partner"/>
