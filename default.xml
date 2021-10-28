@@ -3,38 +3,43 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-barbet-4.19-android12"
+  <default revision="android-gs-raviole-5.10-android12-d1"
     remote="aosp" sync-j="4" />
 
-  <project path="build" name="kernel/build" revision="8c0966a12f3ab946e6e91ce20e581953d36434c1" groups="partner"/>
-  <project path="private/msm-google" name="kernel/msm" groups="partner" >
-    <linkfile src="build.config.redbull" dest="build.config" />
-    <linkfile src="build_redbull-gki.sh" dest="build_redbull-gki.sh" />
-    <linkfile src="build_redbull.sh" dest="build_redbull.sh" />
-    <linkfile src="build_sm8250.sh" dest="build_sm8250.sh" />
-    <linkfile src="build_sm7250.sh" dest="build_sm7250.sh" />
+  <project path="aosp" name="kernel/common" groups="partner" />
+  <project path="private/gs-google" name="kernel/gs" groups="partner" >
+    <linkfile dest="build.config" src="build.config.slider" />
+    <linkfile dest="build_slider.sh" src="build_slider.sh" />
+    <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
+    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
   </project>
-  <project path="private/msm-google/arch/arm64/boot/dts/vendor" name="kernel/msm-extra/devicetree" groups="partner" />
-  <project path="private/msm-google/arch/arm64/boot/dts/vendor/qcom/camera" name="kernel/msm-extra/camera-devicetree" groups="partner" />
-  <project path="private/msm-google/arch/arm64/boot/dts/vendor/qcom/display" name="kernel/msm-extra/display-devicetree" groups="partner" />
-  <project path="private/msm-google/techpack/audio" name="kernel/msm-extra" groups="partner" />
-  <project path="private/msm-google/techpack/camera" name="kernel/msm-extra/camera-kernel" groups="partner" />
-  <project path="private/msm-google/techpack/dataipa" name="kernel/msm-extra/dataipa" groups="partner" />
-  <project path="private/msm-google/techpack/display" name="kernel/msm-extra/display-drivers" groups="partner" />
-  <project path="private/msm-google/techpack/video" name="kernel/msm-extra/video-driver" groups="partner" />
-  <project path="private/msm-google-modules/data-kernel" name="kernel/msm-modules/data-kernel" groups="partner" />
-  <project path="private/msm-google-modules/wlan/qca-wifi-host-cmn" name="kernel/msm-modules/qca-wfi-host-cmn" groups="partner" />
-  <project path="private/msm-google-modules/wlan/qcacld-3.0" name="kernel/msm-modules/qcacld" groups="partner" />
-  <project path="private/msm-google-modules/wlan/fw-api" name="kernel/msm-modules/wlan-fw-api" groups="partner" />
-  <project path="private/msm-google-modules/touch/fts" name="kernel/msm-modules/fts_touch" groups="partner" />
-  <project path="private/msm-google-modules/touch/sec" name="kernel/msm-modules/sec_touch" groups="partner" />
-  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" revision="b2a189331333e014bfef4c0425b3ef4b74accdd0" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" revision="pie-release" clone-depth="1" groups="partner" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" revision="pie-release" clone-depth="1" groups="partner" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="537e01a6ff78760ee5b69597efdbc47bc721058d" clone-depth="1" groups="partner" />
-  <project path="prebuilts-master/misc" name="platform/prebuilts/misc" revision="pie-release" clone-depth="1" groups="partner" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" revision="34bc8bfb493401f7aadbd3b434f9fbfa521e9301" groups="partner" />
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" revision="9a4b503e0a93b68da75ccdc4f0d01d98a9415371" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="cfedc16ec3deb680fca6fe2aff44a1837a97b50d" groups="partner" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" revision="a5fcf02304b51f43d2c8bfd587e26755e3ce2701" groups="partner" />
+  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
+  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
+  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
+  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
+  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
+  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner" />
+  <project path="private/google-modules/edgetpu" name="kernel/google-modules/edgetpu" groups="partner" />
+  <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner" />
+  <project path="private/google-modules/fingerprint/goodix" name="kernel/google-modules/fingerprint/goodix" groups="partner" />
+  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner" />
+  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner" />
+  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
+  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner" />
+  <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner" />
+  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner" />
+  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb" />
+  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
+  <project path="private/google-modules/wlan/bcmdhd43752" name="kernel/google-modules/wlan/bcmdhd/bcm43752" groups="partner" />
+  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
+  <project path="build" name="kernel/build" groups="partner" />
+  <project path="kernel/configs" name="kernel/configs" />
+  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
+  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
+  <project path="prebuilts-master/misc" name="platform/prebuilts/misc" groups="partner" />
+  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
 </manifest>
