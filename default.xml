@@ -33,7 +33,7 @@
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
   <project path="private/google-modules/wlan/bcmdhd43752" name="kernel_google-modules_wlan_bcmdhd_bcm43752" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389" groups="partner" remote="grapheneos" />
-  <project path="build" name="kernel/build" groups="partner" />
+  <project path="build" name="raviole_kernel_build" groups="partner" remote="grapheneos" />
   <project path="kernel/configs" name="kernel/configs" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
   <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
