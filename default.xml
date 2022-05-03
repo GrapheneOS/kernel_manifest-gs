@@ -5,7 +5,7 @@
     <remote  name="grapheneos"
     fetch="https://github.com/GrapheneOS/"
     revision="refs/heads/12.1" />
-  <default revision="refs/tags/android-12.1.0_r0.16"
+  <default revision="refs/tags/android-12.1.0_r0.22"
     remote="aosp" sync-j="4" />
     <project path="aosp" name="kernel_common_5.10" groups="partner" remote="grapheneos" />
     <project path="private/gs-google" name="kernel_google_raviole" groups="partner" remote="grapheneos" >
