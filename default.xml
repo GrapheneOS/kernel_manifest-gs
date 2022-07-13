@@ -6,6 +6,7 @@
   <default revision="android-gs-raviole-5.10-android12L"
     remote="aosp" sync-j="4" />
 
+  <project path="aosp" name="kernel/common" groups="partner" />
   <project path="private/gs-google" name="kernel/gs" groups="partner" >
     <linkfile dest="build.config" src="build.config.slider" />
     <linkfile dest="build_slider.sh" src="build_slider.sh" />
