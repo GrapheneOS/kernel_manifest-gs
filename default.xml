@@ -10,7 +10,7 @@
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel_common_5.10" groups="partner" remote="grapheneos" />
-  <project path="private/gs-google" name="kernel_google_raviole" groups="partner" remote="grapheneos" >
+  <project path="private/gs-google" name="kernel_google_raviole" groups="partner" remote="grapheneos" revision="refs/heads/12.1-bluejay" >
     <linkfile dest="build.config" src="build.config.slider" />
     <linkfile dest="build_slider.sh" src="build_slider.sh" />
     <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
