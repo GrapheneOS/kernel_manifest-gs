@@ -3,7 +3,7 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-raviole-5.10-android12-qpr3"
+  <default revision="android-gs-bluejay-5.10-android12L-d2"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" />
@@ -12,6 +12,11 @@
     <linkfile dest="build_slider.sh" src="build_slider.sh" />
     <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
     <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
+  </project>
+  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay" >
+    <linkfile dest="build_bluejay.sh" src="build_bluejay.sh"/>
+    <linkfile dest="update_symbol_list_bluejay.sh" src="update_symbol_list_bluejay.sh"/>
+    <linkfile dest="private/gs-google/arch/arm64/boot/dts/google/devices/bluejay" src="dts"/>
   </project>
   <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
@@ -35,6 +40,7 @@
   <project path="build" name="kernel/build" groups="partner" />
   <project path="kernel/configs" name="kernel/configs" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
+  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" />
   <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
   <project path="prebuilts-master/misc" name="platform/prebuilts/misc" groups="partner" />
