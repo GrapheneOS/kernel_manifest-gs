@@ -3,11 +3,14 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
+  <remote  name="grapheneos"
+    fetch="https://github.com/GrapheneOS/"
+    revision="refs/heads/12.1" />
   <default revision="refs/tags/android-12.1.0_r0.35"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel/common" groups="partner" />
-  <project path="private/gs-google" name="kernel/gs" groups="partner" >
+  <project path="aosp" name="kernel_common_5.10" groups="partner" remote="grapheneos" />
+  <project path="private/gs-google" name="kernel_google_raviole" groups="partner" remote="grapheneos" >
     <linkfile dest="build.config" src="build.config.slider" />
     <linkfile dest="build_slider.sh" src="build_slider.sh" />
     <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
@@ -30,9 +33,9 @@
   <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner" />
   <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb" />
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
-  <project path="private/google-modules/wlan/bcmdhd43752" name="kernel/google-modules/wlan/bcmdhd/bcm43752" groups="partner" />
-  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
-  <project path="build" name="kernel/build" groups="partner" />
+  <project path="private/google-modules/wlan/bcmdhd43752" name="kernel_google-modules_wlan_bcmdhd_bcm43752" groups="partner" remote="grapheneos" />
+  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389" groups="partner" remote="grapheneos" />
+  <project path="build" name="raviole_kernel_build" groups="partner" remote="grapheneos" />
   <project path="kernel/configs" name="kernel/configs" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
   <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
