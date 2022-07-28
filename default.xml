@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp"
-    fetch="https://android.googlesource.com/" />
-    <remote  name="grapheneos"
-    fetch="https://github.com/GrapheneOS/"
-    revision="refs/heads/12.1" />
-  <default revision="refs/tags/android-12.1.0_r0.35"
-    remote="aosp" sync-j="4" />
-    <project path="aosp" name="kernel_common_5.10" groups="partner" remote="grapheneos" />
-    <project path="private/gs-google" name="kernel_google_raviole" groups="partner" remote="grapheneos" >
-    <linkfile dest="build.config" src="build.config.slider" />
-    <linkfile dest="build_slider.sh" src="build_slider.sh" />
-    <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
-    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
+  <remote name="aosp" fetch="https://android.googlesource.com/"/>
+  <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/tags/SQ3A.220705.003.A1.2022072700"/>
+  
+  <default remote="aosp" revision="refs/tags/android-12.1.0_r0.35" sync-j="4"/>
+  
+  <project name="kernel/common-modules/virtual-device" path="common-modules/virtual-device" revision="be524db095072630a8948ba3027b1ebda9a789d4" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35"/>
+  <project name="kernel/configs" revision="c10b7ea022edc356d37c092d7ca46bcb860f8a90" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35"/>
+  <project name="kernel/google-modules/amplifiers" path="private/google-modules/amplifiers" revision="c5e7e9e7301d491ac9acb0b25d3b7f17c8634961" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/aoc" path="private/google-modules/aoc" revision="b151ca1e770d9b215350210c7cd3aacb9e8e387a" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/aoc-ipc" path="private/google-modules/aoc_ipc" revision="232075c185db837723cb959f6bf31ea9221f969b" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/bluetooth/broadcom" path="private/google-modules/bluetooth/broadcom" revision="f554a2304b0a483b04a17822a3cb1f958ce80edd" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/bms" path="private/google-modules/bms" revision="5dd16e8dfb8be5b0da0f2d2985fbbb4bfa6c3681" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/display" path="private/google-modules/display" revision="b741254fee48121a6dacb7ee6b737eec7154a33d" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/edgetpu" path="private/google-modules/edgetpu" revision="4214dd23c3df7b020f97f7cc9655c41726080d6b" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/fingerprint/fpc" path="private/google-modules/fingerprint/fpc" revision="b6aad74e5fb83080ff7808c92df349443b406539" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/fingerprint/goodix" path="private/google-modules/fingerprint/goodix" revision="c89b9dd0bef4b20ffdf3b3628617f97290bbc198" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/gpu" path="private/google-modules/gpu" revision="86e5f385e9d8d83c040c7104df0fc7046c713323" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/lwis" path="private/google-modules/lwis" revision="d1a9fe0c011d4fe814ed7e7e10ccc56e5f4d1696" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/nfc" path="private/google-modules/nfc" revision="1f88df31f141efe1857c96b1dd28d527691013cf" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/power/reset" path="private/google-modules/power/reset" revision="b01bbd325900c1e140a925e8e07a790b303e959b" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/touch/common" path="private/google-modules/touch/common" revision="191156d9187a33807826aa553b348d0fc91cfb86" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/touch/fts_touch" path="private/google-modules/touch/fts" revision="8f3d6ca470e7dd52641e304e810745a2a77586b0" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/touch/sec_touch" path="private/google-modules/touch/sec" revision="a612796ef80c8dd7f0436dda318e99f7dedb1f40" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel/google-modules/uwb" path="private/google-modules/uwb" revision="5fed2939baec67591b027360fe409fea7335fe20" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="uwb"/>
+  <project name="kernel/prebuilts/build-tools" path="prebuilts/kernel-build-tools" revision="a5fcf02304b51f43d2c8bfd587e26755e3ce2701" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="kernel_common_5.10" path="aosp" remote="grapheneos" revision="5e84b8d3db2ac7fcad2051e934b6346642ceb088" upstream="refs/tags/SQ3A.220705.003.A1.2022072700" dest-branch="refs/tags/SQ3A.220705.003.A1.2022072700" groups="partner"/>
+  <project name="kernel_google-modules_wlan_bcmdhd_bcm43752" path="private/google-modules/wlan/bcmdhd43752" remote="grapheneos" revision="8ca5c22af062be73a396bc17791f1368fcd7c0f9" upstream="refs/tags/SQ3A.220705.003.A1.2022072700" dest-branch="refs/tags/SQ3A.220705.003.A1.2022072700" groups="partner"/>
+  <project name="kernel_google-modules_wlan_bcmdhd_bcm4389" path="private/google-modules/wlan/bcmdhd4389" remote="grapheneos" revision="a9a7f7237e5b14ad813e6b1ca8c3551d221e1ba9" upstream="refs/tags/SQ3A.220705.003.A1.2022072700" dest-branch="refs/tags/SQ3A.220705.003.A1.2022072700" groups="partner"/>
+  <project name="kernel_google_raviole" path="private/gs-google" remote="grapheneos" revision="c9ec03e3bc860b60d72c124a60cfd1e28b41c9ae" upstream="refs/tags/SQ3A.220705.003.A1.2022072700" dest-branch="refs/tags/SQ3A.220705.003.A1.2022072700" groups="partner">
+    <linkfile src="build.config.slider" dest="build.config"/>
+    <linkfile src="build_slider.sh" dest="build_slider.sh"/>
+    <linkfile src="build_mixed.sh" dest="build_mixed.sh"/>
+    <linkfile src="update_symbol_list.sh" dest="update_symbol_list.sh"/>
   </project>
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
-  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
-  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
-  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner" />
-  <project path="private/google-modules/edgetpu" name="kernel/google-modules/edgetpu" groups="partner" />
-  <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner" />
-  <project path="private/google-modules/fingerprint/goodix" name="kernel/google-modules/fingerprint/goodix" groups="partner" />
-  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner" />
-  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner" />
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
-  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner" />
-  <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner" />
-  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner" />
-  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb" />
-  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
-  <project path="private/google-modules/wlan/bcmdhd43752" name="kernel_google-modules_wlan_bcmdhd_bcm43752" groups="partner" remote="grapheneos" />
-  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389" groups="partner" remote="grapheneos" />
-  <project path="build" name="raviole_kernel_build" groups="partner" remote="grapheneos" />
-  <project path="kernel/configs" name="kernel/configs" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
-  <project path="prebuilts-master/misc" name="platform/prebuilts/misc" groups="partner" />
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
+  <project name="platform/prebuilts/boot-artifacts" path="prebuilts/boot-artifacts" revision="eb4e7a5172647a91d3efc2f66b601266ebcc25c2" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="platform/prebuilts/build-tools" path="prebuilts/build-tools" revision="cfedc16ec3deb680fca6fe2aff44a1837a97b50d" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="platform/prebuilts/clang/host/linux-x86" path="prebuilts-master/clang/host/linux-x86" revision="6e3223f76384455acde43affde3df0ea9df66c0d" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="4e6f66acf138d40d9a80be24b275abb9c6eed729" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="platform/prebuilts/misc" path="prebuilts-master/misc" revision="70065c82a4223915cc9d2fb027bc0c3d04c0a1f5" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="platform/system/tools/mkbootimg" path="tools/mkbootimg" revision="34bc8bfb493401f7aadbd3b434f9fbfa521e9301" upstream="refs/tags/android-12.1.0_r0.35" dest-branch="refs/tags/android-12.1.0_r0.35" groups="partner"/>
+  <project name="raviole_kernel_build" path="build" remote="grapheneos" revision="dc3d8222bf0f21e46182adc2a8ea15260d7653d6" upstream="refs/tags/SQ3A.220705.003.A1.2022072700" dest-branch="refs/tags/SQ3A.220705.003.A1.2022072700" groups="partner"/>
 </manifest>
