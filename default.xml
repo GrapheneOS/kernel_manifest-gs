@@ -16,7 +16,7 @@
     <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
     <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
   </project>
-  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay" >
+  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay" revision="dcf5dfc1536d1aeb4478685c86869b95160fd2b3" >
     <linkfile dest="build_bluejay.sh" src="build_bluejay.sh"/>
     <linkfile dest="update_symbol_list_bluejay.sh" src="update_symbol_list_bluejay.sh"/>
     <linkfile dest="private/gs-google/arch/arm64/boot/dts/google/devices/bluejay" src="dts"/>
