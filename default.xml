@@ -3,7 +3,7 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-bluejay-5.10-android12L-d2"
+  <default revision="refs/tags/android-12.1.0_r0.40"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" />
