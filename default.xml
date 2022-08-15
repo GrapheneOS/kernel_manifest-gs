@@ -3,50 +3,76 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-bluejay-5.10-android12L-d2"
+  <default revision="android-gs-bluejay-5.10-android13"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel/common" groups="partner" />
-  <project path="private/gs-google" name="kernel/gs" groups="partner" >
-    <linkfile dest="build.config" src="build.config.slider" />
-    <linkfile dest="build_slider.sh" src="build_slider.sh" />
-    <linkfile dest="build_mixed.sh" src="build_mixed.sh" />
-    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
+  <project path="aosp" name="kernel/common" groups="partner"/>
+  <project path="private/gs-google" name="kernel/gs" groups="partner">
+    <linkfile dest="build.config" src="build.config.slider"/>
+    <linkfile dest="build_slider.sh" src="build_slider.sh"/>
+    <linkfile dest="build_mixed.sh" src="build_mixed.sh"/>
+    <linkfile dest="download_hlos_boot_images_and_repack_kernel_boot_images.sh" src="download_hlos_boot_images_and_repack_kernel_boot_images.sh"/>
+    <linkfile dest="repack_kernel_boot_images.sh" src="repack_kernel_boot_images.sh"/>
+    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
   </project>
-  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay" >
+  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay">
     <linkfile dest="build_bluejay.sh" src="build_bluejay.sh"/>
     <linkfile dest="update_symbol_list_bluejay.sh" src="update_symbol_list_bluejay.sh"/>
     <linkfile dest="private/gs-google/arch/arm64/boot/dts/google/devices/bluejay" src="dts"/>
   </project>
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
-  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
-  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
-  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner" />
-  <project path="private/google-modules/edgetpu" name="kernel/google-modules/edgetpu" groups="partner" />
-  <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner" />
-  <project path="private/google-modules/fingerprint/goodix" name="kernel/google-modules/fingerprint/goodix" groups="partner" />
-  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner" />
-  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner" />
-  <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner" />
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
-  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner" />
-  <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner" />
-  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner" />
-  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb" />
-  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
-  <project path="private/google-modules/wlan/bcmdhd43752" name="kernel/google-modules/wlan/bcmdhd/bcm43752" groups="partner" />
-  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
-  <project path="build" name="kernel/build" groups="partner" />
+  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" clone-depth="1" groups="partner"/>
+  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner"/>
+  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner"/>
+  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner"/>
+  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner"/>
+  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner"/>
+  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner"/>
+  <project path="private/google-modules/edgetpu/abrolhos" name="kernel/google-modules/edgetpu/abrolhos" groups="partner"/>
+  <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner"/>
+  <project path="private/google-modules/fingerprint/goodix" name="kernel/google-modules/fingerprint/goodix" groups="partner"/>
+  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner"/>
+  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner"/>
+  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner"/>
+  <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner"/>
+  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner"/>
+  <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner"/>
+  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner"/>
+  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb"/>
+  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
+  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner"/>
+  <project path="build/kernel" name="kernel/build" groups="partner">
+    <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
+    <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE"/>
+    <linkfile dest="build/build.sh" src="build.sh"/>
+    <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
+    <linkfile dest="build/build_test.sh" src="build_test.sh"/>
+    <linkfile dest="build/build_utils.sh" src="build_utils.sh"/>
+    <linkfile dest="build/BUILD.bazel" src="BUILD.bazel"/>
+    <linkfile dest="build/build-tools/path" src="build-tools/path"/>
+    <linkfile dest="build/config.sh" src="config.sh"/>
+    <linkfile dest="build/envsetup.sh" src="envsetup.sh"/>
+    <linkfile dest="build/_setup_env.sh" src="_setup_env.sh"/>
+    <linkfile dest="build/multi-switcher.sh" src="multi-switcher.sh"/>
+    <linkfile dest="build/kleaf" src="kleaf"/>
+    <linkfile dest="build/abi" src="abi"/>
+    <linkfile dest="build/static_analysis" src="static_analysis"/>
+  </project>
   <project path="kernel/configs" name="kernel/configs" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
-  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
-  <project path="prebuilts-master/misc" name="platform/prebuilts/misc" groups="partner" />
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
+  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="partner">
+    <linkfile dest="build/prebuilts/build-tools" src="."/>
+  </project>
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="partner">
+    <linkfile dest="build/prebuilts/kernel-build-tools" src="."/>
+  </project>
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1" groups="partner"/>
+  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" clone-depth="1" groups="partner"/>
+  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" clone-depth="1" groups="partner"/>
+  <project path="external/stardoc" name="platform/external/stardoc" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" groups="partner"/>
 </manifest>
