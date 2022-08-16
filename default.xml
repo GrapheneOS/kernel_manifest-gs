@@ -3,11 +3,14 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
+  <remote  name="grapheneos"
+    fetch="https://github.com/GrapheneOS/"
+    revision="refs/heads/13"  />
   <default revision="refs/tags/android-13.0.0_r0.48"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel/common" groups="partner" />
-  <project path="private/gs-google" name="kernel/gs" groups="partner">
+  <project path="aosp" name="kernel_common-5.10" groups="partner" remote="grapheneos" />
+  <project path="private/gs-google" name="kernel_gs-gs101" groups="partner" remote="grapheneos">
     <linkfile dest="build.config" src="build.config.slider"/>
     <linkfile dest="build_slider.sh" src="build_slider.sh"/>
     <linkfile dest="build_mixed.sh" src="build_mixed.sh"/>
@@ -25,7 +28,7 @@
   <project path="private/google-modules/edgetpu/abrolhos" name="kernel/google-modules/edgetpu/abrolhos" groups="partner"/>
   <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner"/>
   <project path="private/google-modules/fingerprint/goodix" name="kernel/google-modules/fingerprint/goodix" groups="partner"/>
-  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner"/>
+  <project path="private/google-modules/gpu" name="kernel_google-modules_gpu-gs101" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner"/>
   <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner"/>
   <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner"/>
@@ -34,8 +37,8 @@
   <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner"/>
   <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb"/>
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
-  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner"/>
-  <project path="build/kernel" name="kernel/build" groups="partner">
+  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389-gs101" groups="partner" remote="grapheneos"/>
+  <project path="build/kernel" name="kernel_build-gs101" groups="partner" remote="grapheneos">
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
     <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE"/>
     <linkfile dest="build/build.sh" src="build.sh"/>
