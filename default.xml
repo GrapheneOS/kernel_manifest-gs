@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
-    fetch="https://android.googlesource.com/" />
+  <remote  name="aosp-raviole"
+    fetch="https://android.googlesource.com/"
+    revision="refs/tags/android-13.0.0_r0.4"  />
+  <remote  name="aosp-bluejay"
+    fetch="https://android.googlesource.com/"
+    revision="refs/tags/android-13.0.0_r0.5"  />
   <remote  name="grapheneos"
     fetch="https://github.com/GrapheneOS/"
     revision="refs/heads/13"  />
-  <default revision="refs/tags/android-13.0.0_r0.4"
-    remote="aosp" sync-j="4" />
+
+  <default remote="aosp-raviole" sync-j="4" />
 
   <project path="aosp" name="kernel_common_5.10" groups="partner" remote="grapheneos" />
   <project path="private/gs-google" name="kernel_google_raviole" groups="partner" remote="grapheneos">
@@ -23,7 +27,7 @@
     <linkfile dest="update_symbol_list_bluejay.sh" src="update_symbol_list_bluejay.sh"/>
     <linkfile dest="private/gs-google/arch/arm64/boot/dts/google/devices/bluejay" src="dts"/>
   </project>
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" clone-depth="1" groups="partner" remote="aosp-bluejay" />
   <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner"/>
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner"/>
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner"/>
@@ -60,22 +64,22 @@
     <linkfile dest="build/abi" src="abi"/>
     <linkfile dest="build/static_analysis" src="static_analysis"/>
   </project>
-  <project path="kernel/configs" name="kernel/configs" />
+  <project path="kernel/configs" name="kernel/configs" remote="aosp-bluejay"/>
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device"/>
   <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1"/>
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="partner">
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="partner" remote="aosp-bluejay" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="partner" remote="aosp-bluejay" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" groups="partner" remote="aosp-bluejay" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="partner" remote="aosp-bluejay" >
     <linkfile dest="build/prebuilts/build-tools" src="."/>
   </project>
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="partner">
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="partner" remote="aosp-bluejay" >
     <linkfile dest="build/prebuilts/kernel-build-tools" src="."/>
   </project>
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1" groups="partner"/>
-  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" clone-depth="1" groups="partner"/>
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1" groups="partner" remote="aosp-bluejay" />
+  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" clone-depth="1" groups="partner" remote="aosp-bluejay" />
   <project path="external/bazel-skylib" name="platform/external/bazel-skylib" clone-depth="1" groups="partner"/>
   <project path="external/stardoc" name="platform/external/stardoc" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" groups="partner"/>
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="partner" remote="aosp-bluejay" />
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" groups="partner" remote="aosp-bluejay" />
 </manifest>
