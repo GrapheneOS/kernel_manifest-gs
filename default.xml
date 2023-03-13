@@ -6,7 +6,7 @@
   <remote  name="grapheneos"
     fetch="https://github.com/GrapheneOS/"
     revision="refs/heads/13"  />
-  <default revision="refs/tags/android-13.0.0_r0.58"
+  <default revision="refs/tags/android-t-qpr2-beta-3.2_r0.4"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel_common-5.10" groups="partner" remote="grapheneos" />
@@ -38,6 +38,7 @@
   <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb"/>
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
   <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389-gs101" groups="partner" remote="grapheneos"/>
+  <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner" />
   <project path="build/kernel" name="kernel_build-gs101" groups="partner" remote="grapheneos">
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
     <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE"/>
