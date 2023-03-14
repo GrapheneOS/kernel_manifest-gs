@@ -1,77 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <remote  name="aosp"
-    fetch="https://android.googlesource.com/" />
-  <remote  name="grapheneos"
-    fetch="https://github.com/GrapheneOS/"
-    revision="refs/heads/13"  />
-  <default revision="refs/tags/android-t-qpr2-beta-3.2_r0.4"
-    remote="aosp" sync-j="4" />
-
-  <project path="aosp" name="kernel_common-5.10" groups="partner" remote="grapheneos" />
-  <project path="private/gs-google" name="kernel_gs-gs101" groups="partner" remote="grapheneos">
-    <linkfile dest="build.config" src="build.config.slider"/>
-    <linkfile dest="build_slider.sh" src="build_slider.sh"/>
-    <linkfile dest="build_mixed.sh" src="build_mixed.sh"/>
-    <linkfile dest="download_hlos_boot_images_and_repack_kernel_boot_images.sh" src="download_hlos_boot_images_and_repack_kernel_boot_images.sh"/>
-    <linkfile dest="repack_kernel_boot_images.sh" src="repack_kernel_boot_images.sh"/>
-    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
+  <remote name="aosp" fetch="https://android.googlesource.com/"/>
+  <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/tags/T2B3.230109.009.2023031300"/>
+  
+  <default remote="aosp" revision="refs/tags/android-t-qpr2-beta-3.2_r0.4" sync-j="4"/>
+  
+  <project name="kernel/common-modules/virtual-device" path="common-modules/virtual-device" revision="c0a9c862ea28c5d127c3ba96d70807b27449eb54" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4"/>
+  <project name="kernel/configs" revision="046f81a9665891ac179e64c12aa3b0edd5ed36cf" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4"/>
+  <project name="kernel/google-modules/amplifiers" path="private/google-modules/amplifiers" revision="4d5512751b5caf21b16da8a503b7aa92b16948b1" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/aoc" path="private/google-modules/aoc" revision="b37c105be945e16941a17999dafbe673b904915b" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/aoc-ipc" path="private/google-modules/aoc_ipc" revision="ff7915034a943b310932ff8346b8977aebf2208f" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/bluetooth/broadcom" path="private/google-modules/bluetooth/broadcom" revision="5dda87770f93256b097c48a5ef91c3d8dc0b8a69" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/bms" path="private/google-modules/bms" revision="e670d40a37f08b9a8162daaf4f6f442c4f638da2" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/display" path="private/google-modules/display" revision="77dc8841ddc17552e85f10b5b1c1174bd624b7bd" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/edgetpu/abrolhos" path="private/google-modules/edgetpu/abrolhos" revision="652e28f9a885cb9b723793081a1bc77f70f94452" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/fingerprint/fpc" path="private/google-modules/fingerprint/fpc" revision="b6aad74e5fb83080ff7808c92df349443b406539" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/fingerprint/goodix" path="private/google-modules/fingerprint/goodix" revision="c89b9dd0bef4b20ffdf3b3628617f97290bbc198" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/lwis" path="private/google-modules/lwis" revision="33b619ce25d7197b240d89b2c033822820f66ec2" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/nfc" path="private/google-modules/nfc" revision="9f506bb9c8f365708df29ffac4164c1b6e30f340" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/power/reset" path="private/google-modules/power/reset" revision="6158dd5238a8f60c67d1189c0e3fcda30b03bc30" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/sensors/hall_sensor" path="private/google-modules/sensors/hall_sensor" revision="6fe459c14fd910bc7f659ee4e98e68bf1c8bc35f" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/touch/common" path="private/google-modules/touch/common" revision="4fb4ece618868a9fbecbfd60d50def4d74a03ec5" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/touch/fts_touch" path="private/google-modules/touch/fts" revision="170eb361c89cded1e5d410af22fd07eca61100d9" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/touch/sec_touch" path="private/google-modules/touch/sec" revision="9fb2c6cedb01cc839ef3e1d059b24779b215eb5a" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/google-modules/uwb" path="private/google-modules/uwb" revision="430217673d57b27c141924a777ec5f946be1e96c" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="uwb"/>
+  <project name="kernel/google-modules/video/gchips" path="private/google-modules/video/gchips" revision="661b08e293d00924258cadca3e27aa5be43b5076" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner"/>
+  <project name="kernel/prebuilts/build-tools" path="prebuilts/kernel-build-tools" revision="7f2171df6368a352ec7c28b062460e1cc24138a3" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1">
+    <linkfile src="." dest="build/prebuilts/kernel-build-tools"/>
   </project>
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" clone-depth="1" groups="partner"/>
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner"/>
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner"/>
-  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner"/>
-  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner"/>
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner"/>
-  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner"/>
-  <project path="private/google-modules/edgetpu/abrolhos" name="kernel/google-modules/edgetpu/abrolhos" groups="partner"/>
-  <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner"/>
-  <project path="private/google-modules/fingerprint/goodix" name="kernel/google-modules/fingerprint/goodix" groups="partner"/>
-  <project path="private/google-modules/gpu" name="kernel_google-modules_gpu-gs101" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner"/>
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner"/>
-  <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner"/>
-  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner"/>
-  <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner"/>
-  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner"/>
-  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb"/>
-  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
-  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389-gs101" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner" />
-  <project path="build/kernel" name="kernel_build-gs101" groups="partner" remote="grapheneos">
-    <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
-    <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE"/>
-    <linkfile dest="build/build.sh" src="build.sh"/>
-    <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
-    <linkfile dest="build/build_test.sh" src="build_test.sh"/>
-    <linkfile dest="build/build_utils.sh" src="build_utils.sh"/>
-    <linkfile dest="build/BUILD.bazel" src="BUILD.bazel"/>
-    <linkfile dest="build/build-tools/path" src="build-tools/path"/>
-    <linkfile dest="build/config.sh" src="config.sh"/>
-    <linkfile dest="build/envsetup.sh" src="envsetup.sh"/>
-    <linkfile dest="build/_setup_env.sh" src="_setup_env.sh"/>
-    <linkfile dest="build/multi-switcher.sh" src="multi-switcher.sh"/>
-    <linkfile dest="build/kleaf" src="kleaf"/>
-    <linkfile dest="build/abi" src="abi"/>
-    <linkfile dest="build/static_analysis" src="static_analysis"/>
+  <project name="kernel_build-gs101" path="build/kernel" remote="grapheneos" revision="77686ef64393dd3641c4572eafff4fd48ee8a995" upstream="refs/tags/T2B3.230109.009.2023031300" dest-branch="refs/tags/T2B3.230109.009.2023031300" groups="partner">
+    <linkfile src="kleaf/bazel.sh" dest="tools/bazel"/>
+    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE"/>
+    <linkfile src="build.sh" dest="build/build.sh"/>
+    <linkfile src="build_abi.sh" dest="build/build_abi.sh"/>
+    <linkfile src="build_test.sh" dest="build/build_test.sh"/>
+    <linkfile src="build_utils.sh" dest="build/build_utils.sh"/>
+    <linkfile src="BUILD.bazel" dest="build/BUILD.bazel"/>
+    <linkfile src="build-tools/path" dest="build/build-tools/path"/>
+    <linkfile src="config.sh" dest="build/config.sh"/>
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh"/>
+    <linkfile src="_setup_env.sh" dest="build/_setup_env.sh"/>
+    <linkfile src="multi-switcher.sh" dest="build/multi-switcher.sh"/>
+    <linkfile src="kleaf" dest="build/kleaf"/>
+    <linkfile src="abi" dest="build/abi"/>
+    <linkfile src="static_analysis" dest="build/static_analysis"/>
   </project>
-  <project path="kernel/configs" name="kernel/configs" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device"/>
-  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1"/>
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="partner">
-    <linkfile dest="build/prebuilts/build-tools" src="."/>
+  <project name="kernel_common-5.10" path="aosp" remote="grapheneos" revision="8cbae0321d75603f0eaf1c250b4de3c01ec00684" upstream="refs/tags/T2B3.230109.009.2023031300" dest-branch="refs/tags/T2B3.230109.009.2023031300" groups="partner"/>
+  <project name="kernel_google-modules_gpu-gs101" path="private/google-modules/gpu" remote="grapheneos" revision="91cfcb5f13b8060b9e2a67933e5f1cc5d312228b" upstream="refs/tags/T2B3.230109.009.2023031300" dest-branch="refs/tags/T2B3.230109.009.2023031300" groups="partner"/>
+  <project name="kernel_google-modules_wlan_bcmdhd_bcm4389-gs101" path="private/google-modules/wlan/bcmdhd4389" remote="grapheneos" revision="fe270e3340c6c41a7b865e988da541f7e69719cd" upstream="refs/tags/T2B3.230109.009.2023031300" dest-branch="refs/tags/T2B3.230109.009.2023031300" groups="partner"/>
+  <project name="kernel_gs-gs101" path="private/gs-google" remote="grapheneos" revision="380eebdac3851b98e691fb972afe62a6452a9106" upstream="refs/tags/T2B3.230109.009.2023031300" dest-branch="refs/tags/T2B3.230109.009.2023031300" groups="partner">
+    <linkfile src="build.config.slider" dest="build.config"/>
+    <linkfile src="build_slider.sh" dest="build_slider.sh"/>
+    <linkfile src="build_mixed.sh" dest="build_mixed.sh"/>
+    <linkfile src="download_hlos_boot_images_and_repack_kernel_boot_images.sh" dest="download_hlos_boot_images_and_repack_kernel_boot_images.sh"/>
+    <linkfile src="repack_kernel_boot_images.sh" dest="repack_kernel_boot_images.sh"/>
+    <linkfile src="update_symbol_list.sh" dest="update_symbol_list.sh"/>
   </project>
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="partner">
-    <linkfile dest="build/prebuilts/kernel-build-tools" src="."/>
+  <project name="platform/build/bazel_common_rules" path="build/bazel_common_rules" revision="b2e0c88b851296e42379465255cbd2169f02e2d6" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/external/bazel-skylib" path="external/bazel-skylib" revision="f106017751732e4baaf3e71170ef4f2bb337848d" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/external/stardoc" path="external/stardoc" revision="a44b1f36e13ee4b51df3efae84b3fdf9d83720cc" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/bazel/linux-x86_64" path="prebuilts/bazel/linux-x86_64" revision="cc1a9198fe6deeca2d370d656e0ad2f3a337995a" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/boot-artifacts" path="prebuilts/boot-artifacts" revision="127702405b26d6b18c9704e35e4ae994b484ccea" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/build-tools" path="prebuilts/build-tools" revision="83f275bc58606b6b711fcbf375eb241ae23c04c9" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1">
+    <linkfile src="." dest="build/prebuilts/build-tools"/>
   </project>
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1" groups="partner"/>
-  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" clone-depth="1" groups="partner"/>
-  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" clone-depth="1" groups="partner"/>
-  <project path="external/stardoc" name="platform/external/stardoc" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="partner"/>
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" groups="partner"/>
+  <project name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="95dda9288fa9274374c937c2017054f19bcdb9e6" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/gas/linux-x86" path="prebuilts/gas/linux-x86" revision="592150fc8ae9f48f2e73f390961f32ca6f5f6a9f" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" clone-depth="1"/>
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="9d1da236155230468fbb8e19e16400ad822fd754" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="8188c2fcab3ea55f35544c7bb389f7ee70c0018e" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/misc" path="prebuilts/misc" revision="fd33c28053105d723e3ca90bdc2aa3425dab4d66" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
+  <project name="platform/system/tools/mkbootimg" path="tools/mkbootimg" revision="6ed92534ddb926163dee5023c739c9f3655ff92f" upstream="refs/tags/android-t-qpr2-beta-3.2_r0.4" dest-branch="refs/tags/android-t-qpr2-beta-3.2_r0.4" groups="partner" clone-depth="1"/>
 </manifest>
