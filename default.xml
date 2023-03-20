@@ -3,7 +3,7 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-raviole-5.10-android13-qpr1"
+  <default revision="android-gs-raviole-5.10-android13-qpr2"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" />
