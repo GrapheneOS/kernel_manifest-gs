@@ -39,6 +39,7 @@
   <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner"/>
   <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb"/>
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
+  <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner" />
   <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner"/>
   <project path="build/kernel" name="kernel/build" groups="partner">
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
