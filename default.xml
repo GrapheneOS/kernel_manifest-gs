@@ -3,7 +3,7 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-raviole-5.10-android14-qpr2"
+  <default revision="android-gs-raviole-5.10-android14-qpr3"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" />
@@ -72,7 +72,7 @@
   <project path="private/google-modules/touch/novatek" name="kernel/google-modules/touch/novatek_touch" groups="partner" />
   <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner" />
   <project path="private/google-modules/touch/synaptics" name="kernel/google-modules/touch/synaptics_touch" groups="partner" />
-  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb" />
+  <project path="private/google-modules/uwb/qorvo/dw3000" name="kernel/google-modules/uwb/qorvo/dw3000" groups="partner"/>
   <project path="private/google-modules/uwb-diags" name="kernel/google-modules/uwb-diags" groups="uwb" />
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
   <project path="private/google-modules/wlan/bcmdhd4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
