@@ -42,7 +42,7 @@
     <linkfile dest="update_symbol_list_felix-staging.sh" src="update_symbol_list_felix-staging.sh"/>
     <linkfile dest="private/gs-google/arch/arm64/boot/dts/google/devices/felix" src="dts"/>
   </project>
-  <project path="private/devices/google/tangorpro" name="kernel/devices/google/tangorpro" groups="partner,tangorpro" >
+  <project path="private/devices/google/tangorpro" name="kernel_devices_google_tangorpro" groups="partner,tangorpro" remote="grapheneos" >
     <linkfile dest="build_tangorpro.sh" src="build_tangorpro.sh"/>
     <linkfile dest="update_symbol_list_tangorpro-aosp.sh" src="update_symbol_list_tangorpro-aosp.sh"/>
     <linkfile dest="update_symbol_list_tangorpro-staging.sh" src="update_symbol_list_tangorpro-staging.sh"/>
