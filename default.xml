@@ -57,7 +57,7 @@
   <project path="private/google-modules/edgetpu/janeiro" name="kernel/google-modules/edgetpu/janeiro" groups="partner" />
   <project path="private/google-modules/power/reset" name="kernel_google-modules_power_reset-gs" groups="partner" remote="grapheneos" />
   <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" clone-depth="1" groups="partner" />
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
+  <project path="private/google-modules/amplifiers" name="kernel_google-modules_amplifiers-gs" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/bluetooth/synaptics" name="kernel/google-modules/bluetooth/synaptics" groups="partner" />
   <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
   <project path="private/google-modules/bluetooth/qcom" name="kernel/google-modules/bluetooth/qcom" groups="partner" />
