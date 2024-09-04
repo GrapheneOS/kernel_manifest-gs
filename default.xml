@@ -48,7 +48,7 @@
     <linkfile dest="update_symbol_list_tangorpro-staging.sh" src="update_symbol_list_tangorpro-staging.sh"/>
     <linkfile dest="private/gs-google/arch/arm64/boot/dts/google/devices/tangorpro" src="dts"/>
   </project>
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
+  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" revision="d543a06dc7a776507573d42cc8acaaec1012e05a" />
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
   <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner" />
   <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner" />
