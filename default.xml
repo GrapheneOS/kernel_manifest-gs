@@ -5,8 +5,8 @@
     fetch="https://android.googlesource.com/" />
   <remote  name="grapheneos"
     fetch="https://github.com/GrapheneOS/"
-    revision="refs/heads/14" />
-  <default revision="refs/tags/android-14.0.0_r0.135"
+    revision="refs/heads/15" />
+  <default revision="refs/tags/android-15.0.0_r0.5"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel_common-5.10" groups="partner" remote="grapheneos" />
